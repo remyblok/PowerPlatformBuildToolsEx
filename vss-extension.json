@@ -1,0 +1,41 @@
+{
+    "manifestVersion": 1,
+    "id": "PowerPlatform-BuildTools-Extensions-PW",
+    "name": "Power Platform Build Tools Extension",
+    "version": "1.0.3",
+    "publisher": "ProdwareNL-remyblok",
+    "targets": [
+        {
+            "id": "Microsoft.VisualStudio.Services"
+        }
+    ],    
+    "description": "Extensions to the Power Platform Build Tools from Microsoft. Automate common build and deployment tasks related to Power Platform.",
+    "categories": [
+        "Azure Pipelines"
+    ],
+    "branding": {
+        "color": "#0b0b0b",
+        "theme": "dark"
+    },
+    "icons": {
+        "default": "images/extension-icon.png"        
+    },
+    "tags": [ "Power Platform", "Dynamics 365", "Dynamics CRM", "Dynamics", "CRM" ],
+    "files": [
+        {
+            "path": "tasks"
+        }
+    ],
+    "contributions": [
+        {
+            "id": "get-connection-string",
+            "type": "ms.vss-distributed-task.task",
+            "targets": [
+                "ms.vss-distributed-task.tasks"
+            ],
+            "properties": {
+                "name": "tasks/get-connection-string"
+            }
+        }
+    ]
+}
