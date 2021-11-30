@@ -16,7 +16,7 @@
   "version": {
     "Major": "0",
     "Minor": "0",
-    "Patch": "3"
+    "Patch": "4"
   },
   "preview": false,
   "minimumAgentVersion": "1.95.0",
@@ -57,6 +57,22 @@
       "required": true,
       "visibleRule": "authenticationType = PowerPlatformSPN",
       "helpMarkDown": "Name of the pipeline variable to set with the connection string value."
+    },
+    {
+      "name": "AppId",
+      "type": "string",
+      "label": "App Id",
+      "required": false,
+      "visibleRule": "authenticationType = PowerPlatformEnvironment",
+      "helpMarkDown": "App Id to use to login. Uses a default value when no App Id is specified"
+    },
+    {
+      "name": "RedirectUri",
+      "type": "string",
+      "label": "Redirect Uri",
+      "required": false,
+      "visibleRule": "authenticationType = PowerPlatformEnvironment",
+      "helpMarkDown": "Redirect URI of the specificed App. Needed when specifying an App Id"
     }
   ],
   "execution": {

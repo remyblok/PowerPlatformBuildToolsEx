@@ -31,8 +31,11 @@ function Get-ConnectionStringFromActiveServiceConnection {
     $serviceConnection.url = Get-UrlFromEnvironmentVariables $serviceConnection.url
 
     if ($selectedAuthName -eq "PowerPlatformEnvironment") {
+        $appId = Get-VSTSInput -Name "AppId" -Default "51f81489-12ee-4a9e-aaae-a2591f45987d"
+        $redirectUri = Get-VSTSInput -Name "RedirectUri" -Default "app://58145B91-0C36-4500-8554-080854F2AC97"
+        
         # Write-Verbose "selected authN using username/password ($($selectedAuthName))."
-        $connectingString = "AuthType=OAuth;url=$($serviceConnection.url);UserName=$($serviceConnection.Auth.Parameters.UserName);Password=$($serviceConnection.Auth.Parameters.Password);ClientId=51f81489-12ee-4a9e-aaae-a2591f45987d;RedirectUri=app://58145B91-0C36-4500-8554-080854F2AC97"
+        $connectingString = "AuthType=OAuth;url=$($serviceConnection.url);UserName=$($serviceConnection.Auth.Parameters.UserName);Password=$($serviceConnection.Auth.Parameters.Password);ClientId=$($appId);RedirectUri=$($redirectUri)"
 
     } elseif ($selectedAuthName -eq "PowerPlatformSPN") {
         # Write-Verbose "selected authN using SPN ($($selectedAuthName))."
