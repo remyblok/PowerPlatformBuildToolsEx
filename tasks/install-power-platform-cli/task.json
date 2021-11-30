@@ -1,0 +1,56 @@
+{
+  "id": "0a5b2dcc-5524-4982-b72c-6d2215bdf154",
+  "name": "PowerPlatformPowerPlatformCLIInstaller",
+  "friendlyName": "Install Power Platform CLI",
+  "description": "Install Power Platform CLI",
+  "author": "Remy Blok",
+  "helpMarkDown": "[More Info](https://docs.microsoft.com/en-us/powerapps/developer/data-platform/powerapps-cli)",
+  "category": "Utility",
+  "visibility": [
+    "Build",
+    "Release"
+  ],
+  "demands": [
+    "PowerPlatformTool"
+  ],
+  "version": {
+    "Major": "0",
+    "Minor": "0",
+    "Patch": "1"
+  },
+  "preview": false,
+  "minimumAgentVersion": "1.95.0",
+  "instanceNameFormat": "Install Power Platform CLI $(message)",
+  "inputs": [
+    {
+      "name": "LatestVersion",
+      "label": "Use latest version",
+      "type": "boolean",
+      "required": true,
+      "helpMarkDown": "Install the latest version of the Power Platform CLI",
+      "defaultValue": true
+    },
+    {
+      "name": "PowerPlatformCLIVersion",
+      "label": "Version",
+      "type": "string",
+      "required": true,
+      "helpMarkDown": "Specify the version of Microsoft Power Platform CLI to install",
+      "defaultValue": "latest",
+      "groupname": "advanced"
+    }
+  ],
+  "groups": [
+    {
+      "name": "advanced",
+      "displayName": "Advanced",
+      "isExpanded": false,
+      "visibleRule": "LatestVersion = false"
+    }
+  ],
+  "execution": {
+    "PowerShell3": {
+      "target": "InstallPAC.ps1"
+    }
+  }
+}
