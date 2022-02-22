@@ -1,10 +1,10 @@
 {
   "id": "0a5b2dcc-5524-4982-b72c-6d2215bdf154",
-  "name": "PowerPlatformGetConnectionString",
+  "name": "PowerPlatformExGetConnectionString",
   "friendlyName": "Power Platform Get Environment Connection String",
   "description": "Power Platform Get Environment Connection String",
   "author": "Remy Blok",
-  "helpMarkDown": "[More Info](https://aka.ms/buildtoolsdoc)",
+  "helpMarkDown": "[More Info](https://github.com/remyblok/PowerPlatformBuildToolsEx/blob/main/README.md)",
   "category": "Utility",
   "visibility": [
     "Build",

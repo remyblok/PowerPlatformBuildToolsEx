@@ -6,6 +6,10 @@ Microsoft delivers the Power Platform Build Tools to automate common build and d
 The Tools in this extension build upon that basis and add new tools that can be used during your build and deployment pipeline.
 ## Helper Tasks
 The available helper tasks are described below.
+
+- [Get Connection String](#get-connection-string)
+- [Install Power Platform CLI](#install-power-platform-cli)
+
 ### Get Connection String
 You can create Service Connections to the Power Platform Environment using the default functionality in DevOps. This task creates a [Dataverse connection string](https://docs.microsoft.com/en-us/powerapps/developer/data-platform/xrm-tooling/use-connection-strings-xrm-tooling-connect) to the Environment based on the provided Service Connection and stores it in a pipeline variable. The variable name that is used is specified in the inputs of the task.
 
@@ -16,7 +20,7 @@ The variable can be used in subsequent steps in order to connect to the Datavers
 #### YAML snippet (Get Connection String)
 ```yml
 # Get Connection string for the provided Service connection
-- task: PowerPlatformGetConnectionString@0
+- task: PowerPlatformExGetConnectionString@0
   displayName: 'Get Connection string'
   inputs:
     authenticationType: 'PowerPlatformSPN'
@@ -26,7 +30,7 @@ The variable can be used in subsequent steps in order to connect to the Datavers
 
 ```yml
 # Get Connection string for the provided Service connection
-- task: PowerPlatformGetConnectionString@0
+- task: PowerPlatformExGetConnectionString@0
   displayName: 'Get Connection string'
   inputs:
     # Username/password (no MFA support)
@@ -49,7 +53,7 @@ Installs the [Microsoft Power Platform CLI](https://docs.microsoft.com/en-us/pow
 #### YAML snippet (Install Power Platform CLI)
 ```yml
 # Install the Power Platform CLI tooling
-- task: PowerPlatformPowerPlatformCLIInstaller@0
+- task: PowerPlatformExPowerPlatformCLIInstaller@0
   displayName: Install PowerPlatform Tools
   inputs:
     DefaultVersion: true
@@ -57,7 +61,7 @@ Installs the [Microsoft Power Platform CLI](https://docs.microsoft.com/en-us/pow
 
 ```yml
 # Install the Power Platform CLI tooling
-- task: PowerPlatformPowerPlatformCLIInstaller@0
+- task: PowerPlatformExPowerPlatformCLIInstaller@0
   displayName: Install PowerPlatform Tools
   inputs:
     DefaultVersion: false
@@ -67,5 +71,5 @@ Installs the [Microsoft Power Platform CLI](https://docs.microsoft.com/en-us/pow
 
 | Parameters    | Description   |
 |---------------|---------------|
-| `DefaultVersion`<br/>Use default tool version | Set to **true** to use the default version of all tools, otherwise **false**. Required (and **false**) when any tool versions are specified. |
+| `DefaultVersion`<br/>Use default tool version | Set to **true** to use the default version of all tools, otherwise **false**. Required (and **false**) when the tool version is specified. |
 | `PowerPlatformCLIVersion`<br/>Tool version | The specific version of the tool to use. |

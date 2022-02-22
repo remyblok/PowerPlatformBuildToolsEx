@@ -1,10 +1,10 @@
 {
   "id": "0a5b2dcc-5524-4982-b72c-6d2215bdf154",
-  "name": "PowerPlatformPowerPlatformCLIInstaller",
+  "name": "PowerPlatformExPowerPlatformCLIInstaller",
   "friendlyName": "Install Power Platform CLI",
   "description": "Install Power Platform CLI",
   "author": "Remy Blok",
-  "helpMarkDown": "[More Info](https://docs.microsoft.com/en-us/powerapps/developer/data-platform/powerapps-cli)",
+  "helpMarkDown": "[More Info](https://github.com/remyblok/PowerPlatformBuildToolsEx/blob/main/README.md)",
   "category": "Utility",
   "visibility": [
     "Build",
